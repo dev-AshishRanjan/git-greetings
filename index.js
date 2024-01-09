@@ -45,7 +45,9 @@ module.exports = (app) => {
     if (number_Issues.length === 1)
       try {
         context.octokit.issues.createComment(
-          context.issue({ body: `*First issue by @${user}*` })
+          context.issue({
+            body: `*First issue by @${user}* \n\n *Issues Details of @${user}* in [${context.payload.repository.name}](${context.payload.repository.html_url}) :\n | OPEN | CLOSED | TOTAL | \n |----|----|----| \n | ${openIssues.length} | ${closedIssues.length} | **${number_Issues.length}** |`,
+          })
         );
       } catch (err) {
         if (err.code != 404) {
@@ -233,16 +235,18 @@ module.exports = (app) => {
 
     // issues numbers
     const number_PR = res.data.filter((data) => !data.issues);
-    console.log("+++++++++++++++++++++++++++++==================");
-    console.log(res.data);
-    console.log("+++++++++++++++++++++++++++++==================");
+    // console.log("+++++++++++++++++++++++++++++==================");
+    // console.log(res.data);
+    // console.log("+++++++++++++++++++++++++++++==================");
     const openIssues = number_PR.filter((issue) => issue.state === "open");
     const closedIssues = number_PR.filter((issue) => issue.state === "closed");
 
     if (number_PR.length === 1)
       try {
         context.octokit.issues.createComment(
-          context.issue({ body: `*First PR by @${user}*` })
+          context.issue({
+            body: `*First PR by @${user}*\n\n *PR Details of @${user}* in [${context.payload.repository.name}](${context.payload.repository.html_url}) :\n | OPEN | CLOSED | TOTAL | \n |----|----|----| \n | ${openIssues.length} | ${closedIssues.length} | **${number_PR.length}** |`,
+          })
         );
       } catch (err) {
         if (err.code != 404) {

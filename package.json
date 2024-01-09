@@ -2,10 +2,10 @@
   "name": "git-greetings",
   "version": "1.0.0",
   "private": true,
-  "description": "A Basic Github App",
+  "description": "A Basic Github App for Greetings. It gives stats on every opened Issues and PRs. It also manages the labels of the repo",
   "author": "dev-AshishRanjan",
   "license": "ISC",
-  "homepage": "https://github.com//",
+  "homepage": "https://github.com/dev-AshishRanjan/git-greetings",
   "keywords": [
     "probot",
     "github",
