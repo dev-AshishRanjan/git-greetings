@@ -28,6 +28,18 @@
 
 > A GitHub App built with [Probot](https://github.com/probot/probot) that A Basic Github App
 
+**A Basic Github App for Greetings.**
+It **gives stats** on every opened Issues and PRs.
+It also **manages** the labels of the repo
+
+The Features of this bot are :
+
+1. It greets all the users when they create any issue or pr, with statical data
+2. It manages the labels of the Github Repo
+3. Collaborator can add or remove labels from issue and pr using comments
+   - `/label add bug,invalid`
+   - `/label remove bug`
+
 ## Setup
 
 ```sh

@@ -12,7 +12,7 @@
     "probot-app"
   ],
   "scripts": {
-    "dev": "nodemon & npm start",
+    "dev": "nodemon -e js --exec \"npm run start\"",
     "start": "probot run ./index.js",
     "test": "jest",
     "start-with-proxy": "HTTP_PROXY=http://172.16.199.20:8080 HTTPS_PROXY=http://172.16.199.20:8080 npm start"
